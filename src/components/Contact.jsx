@@ -40,12 +40,10 @@ export default function Contact() {
           </button>
         </div>
         <div style={{ display:"flex",justifyContent:"center",gap: isMobile ? 32 : 48,opacity:inView?1:0,transition:"opacity 0.8s ease 1.1s" }}>
-          {["GitHub","LinkedIn","Email"].map(s=>(
-            <button key={s} data-h="true" style={{ background:"none",border:"none",cursor: isMobile ? "pointer" : "none",fontFamily:"'Space Mono',monospace",fontSize: isMobile ? 10 : 11,letterSpacing:"0.1em",color:"rgba(255,255,255,0.28)",textTransform:"uppercase",transition:"color 0.25s" }}
-              onMouseEnter={e=>e.currentTarget.style.color="#00FFB2"}
-              onMouseLeave={e=>e.currentTarget.style.color="rgba(255,255,255,0.28)"}
-            >{s}</button>
-          ))}
+          <button data-h="true" onClick={()=>window.open("https://www.linkedin.com/in/shubham-payer-22b1451bb?utm_source=share_via&utm_content=profile&utm_medium=member_ios","_blank")} style={{ background:"none",border:"none",cursor: isMobile ? "pointer" : "none",fontFamily:"'Space Mono',monospace",fontSize: isMobile ? 10 : 11,letterSpacing:"0.1em",color:"rgba(255,255,255,0.28)",textTransform:"uppercase",transition:"color 0.25s" }}
+            onMouseEnter={e=>e.currentTarget.style.color="#00FFB2"}
+            onMouseLeave={e=>e.currentTarget.style.color="rgba(255,255,255,0.28)"}
+          >LinkedIn</button>
         </div>
       </div>
       <div style={{ maxWidth:1200,margin: isMobile ? "48px auto 0" : "80px auto 0",paddingTop:32,borderTop:"1px solid rgba(255,255,255,0.05)",display:"flex",flexDirection: isMobile ? "column" : "row",gap: isMobile ? 16 : 0,justifyContent:"space-between",alignItems:"center",position:"relative" }}>
