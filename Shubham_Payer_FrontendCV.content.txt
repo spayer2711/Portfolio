@@ -1,0 +1,77 @@
+Collaborated under Agile sprints with designers, PMs, and backend engineers.
+Ensured cross‑browser compatibility and accessibility basics.
+Enhanced performance via code‑splitting, cleanup, and component optimization.
+Customized and deployed chatbots for Talkk, enabling real‑time conversations using Socket.io.
+Developed full‑stack modules (Node.js + React) for select product features.
+Integrated REST APIs using Axios/Fetch, ensuring seamless frontend–backend data flow.
+Converted Figma/UI designs into clean, scalable, pixel‑perfect frontends.
+Built responsive and mobile‑optimized UIs using React.js, SCSS, Tailwind, Bootstrap.
+Responsibilities :
+Mentored 4 junior developers, improving team productivity and delivery quality.
+Recognized with Quick Learner Award, and nominated 2× Performer of the Quarter/Year.
+Implemented real‑time chatbot workflows using Socket.io, boosting interaction responsiveness.
+Improved onboarding forms for ABSA by 30–40% through DOM optimization and reusable components.
+Delivered responsive UI screens across enterprise projects.
+Key Achievements :
+requirements.
+Government, NISG, and ABSA Bank, delivering tailored solutions to meet diverse technical and business
+application projects for leading clients such as PNB (Punjab National Bank), Mumbai Port Trust, Mauritius
+development for certain full-stack modules to support end-to-end delivery. I also worked on chatbot and web
+time integrations, and close collaboration with product and design teams. I contributed to backend API
+enhancing web applications and CMS platforms. My role focused on creating responsive user interfaces, real-
+As a core member of the frontend development team at Gray Matrix, I worked on designing, developing, and
+Gray Matrix — Software Engineer
+PROFESSIONAL EXPERIENCE
+2021-NOW
+Compatibility, Debugging, Agile/Scrum, Client Communication, Leadership & Mentoring
+Other Skills: Socket.io (Real‑time Communication), Performance Optimization, Accessibility Basics, Cross‑Browser
+Backend : Node.js, Express.js, REST APIs, MongoDB
+Tools & Build: Git/GitHub, VS Code, NPM/Yarn, Webpack/Vite, Chrome DevTools
+Responsive UI, Pixel‑Perfect Conversion, Form Validations, UI State Management
+Frontend: React.js, React Hooks, Context API, JavaScript (ES6+), HTML5, CSS3, SCSS, Tailwind CSS, Bootstrap, Material UI,
+CORE SKILL
+developers, with consistent contributions to product innovation and delivery excellence.
+and CMS development. Recognized at Gray Matrix for quick learning, leadership, and mentoring junior
+hooks, SCSS, Tailwind, performance optimization, and API integration, with additional experience in Node.js
+platforms for clients such as PNB, Mumbai Port Trust, Mauritius Government, and NISG. Skilled in React
+responsive UI development. Proven track record delivering enterprise-grade web apps and chatbot
+Frontend Developer with 4.9+ years of experience specializing in React.js, real-time interfaces, and
+ABOUT ME
++91 7208921050   Mumbai    spayer2711@gmail.com     linkedin.com/in/shubham-payer-22b1451bb
+Frontend Developer | React.js Specialist |  4.9 + Years Experience
+SHUBHAM PAYER
+----------------Page (0) Break----------------
+delivery.
+Trained and mentored 4 team members under my guidance, helping them improve in React.js and project
+Took on leadership responsibilities, guiding the team as a senior developer.
+Appreciated by senior management for contributions to company level product development.
+Awarded Quick Learner during the company’s tech fest.
+Nominated twice for Performer of the Quarter and Year at Gray Matrix.
+ADDITIONAL HIGHLIGHTS
+Mumbai University
+2017-2019
+BACHELOR OF SCIENCE IN INFORMATION AND TECHNOLOGY
+Mumbai University IDOL                                          2023-2025
+MASTER OF SCIENCE IN INFORMATION AND TECHNOLOGY
+EDUCATION
+Explored future-ready multi‑channel broadcast architecture.
+Designed digital‑human‑focused conversational UI.
+Developed real‑time AI assistant interface.
+React.js, Socket.io
+4. AI Agent (POC)
+Implemented secure form handling and validations.
+Improved loan flow UI, dashboard usability, and mobile responsiveness.
+React.js, PHP, Bootstrap
+3. Mortgage Market — Loan & Mortgage Platform
+Built reusable component library for upcoming modules.
+Achieved faster performance through optimized forms and reduced DOM complexity.
+Migrated entire customer onboarding experience from legacy Node.js UI to React.
+React.js, REST APIs, Form Optimization
+2. ABSA - Banking Customer Onboarding (Migration to React)
+Delivered customized deployments for PNB, Mumbai Port Trust, Mauritius Government, NISG.
+Built CMS for workflows, analytics, broadcasts, and bot training.
+Developed chatbot UI & real‑time communication with Socket.io.
+React.js, Socket.io, SCSS, Node.js APIs
+1. Talkk (Product @ Gray Matrix) -  Conversational AI Platform
+KEY PROJECTS
+----------------Page (1) Break----------------
