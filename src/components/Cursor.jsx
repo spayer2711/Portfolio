@@ -43,8 +43,8 @@ export default function Cursor() {
 
   return (
     <>
-      <div ref={dot} style={{ position:"fixed",top:0,left:0,zIndex:99999,width:8,height:8,borderRadius:"50%",background:click?"#fff":"#00FFB2",pointerEvents:"none",mixBlendMode:"difference",boxShadow:"0 0 10px #00FFB2",transition:"background 0.15s" }} />
-      <div ref={ring} style={{ position:"fixed",top:0,left:0,zIndex:99998,width:hov?68:44,height:hov?68:44,borderRadius:"50%",border:`1px solid rgba(0,255,178,${hov?0.85:0.3})`,pointerEvents:"none",boxShadow:hov?"0 0 24px rgba(0,255,178,0.15)":"none",transition:"width 0.4s cubic-bezier(0.34,1.56,0.64,1),height 0.4s cubic-bezier(0.34,1.56,0.64,1),border-color 0.3s,box-shadow 0.3s" }} />
+      <div ref={dot} style={{ position:"fixed",top:0,left:0,zIndex:99999,width:8,height:8,borderRadius:"50%",background:click?"#fff":"#D4A853",pointerEvents:"none",mixBlendMode:"difference",boxShadow:"0 0 10px #D4A853",transition:"background 0.15s" }} />
+      <div ref={ring} style={{ position:"fixed",top:0,left:0,zIndex:99998,width:hov?68:44,height:hov?68:44,borderRadius:"50%",border:`1px solid rgba(212,168,83,${hov?0.85:0.3})`,pointerEvents:"none",boxShadow:hov?"0 0 24px rgba(212,168,83,0.15)":"none",transition:"width 0.4s cubic-bezier(0.34,1.56,0.64,1),height 0.4s cubic-bezier(0.34,1.56,0.64,1),border-color 0.3s,box-shadow 0.3s" }} />
     </>
   );
 }

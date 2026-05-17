@@ -7,10 +7,10 @@ export default function About() {
   const isMobile = useMediaQuery("(max-width:768px)");
   const { ref, inView } = useInView();
   const stats = [
-    { value:"5+", label:"Years experience", color:"#00FFB2" },
-    { value:"5", label:"Companies served", color:"#00D4FF" },
-    { value:"2", label:"Certifications", color:"#FFE500" },
-    { value:"M.Com", label:"Highest degree", color:"#FF6B35" },
+    { value:"5+", label:"Years experience", color:"#D4A853" },
+    { value:"5", label:"Companies served", color:"#2B6CB0" },
+    { value:"2", label:"Certifications", color:"#F6C842" },
+    { value:"M.Com", label:"Highest degree", color:"#D97706" },
   ];
   const secPad = isMobile ? "80px 20px" : "130px 52px";
   const gap = isMobile ? 48 : 80;
@@ -18,10 +18,10 @@ export default function About() {
     <section id="about" ref={ref} style={{ padding:secPad,maxWidth:1200,margin:"0 auto" }}>
       <div style={{ display:"grid",gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",gap,alignItems:"center" }}>
         <div>
-          <p style={{ fontFamily:"'Space Mono',monospace",fontSize:10,color:"#00FFB2",letterSpacing:"0.18em",textTransform:"uppercase",marginBottom:18,opacity:inView?1:0,transition:"opacity 0.6s ease" }}>01 — About</p>
+          <p style={{ fontFamily:"'Space Mono',monospace",fontSize:10,color:"#D4A853",letterSpacing:"0.18em",textTransform:"uppercase",marginBottom:18,opacity:inView?1:0,transition:"opacity 0.6s ease" }}>01 — About</p>
           <h2 style={{ margin:"0 0 30px",lineHeight:0.9 }}>
             <div style={{ overflow:"hidden",display:"block" }}><SplitText text="Precision" inView={inView} delay={0.1} style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:"clamp(46px,6.5vw,84px)",color:"#fff",letterSpacing:"0.02em" }}/></div>
-            <div style={{ overflow:"hidden",display:"block" }}><SplitText text="in Numbers." inView={inView} delay={0.3} style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:"clamp(46px,6.5vw,84px)",WebkitTextStroke:"1.5px rgba(0,255,178,0.6)",color:"transparent",letterSpacing:"0.02em" }}/></div>
+            <div style={{ overflow:"hidden",display:"block" }}><SplitText text="in Numbers." inView={inView} delay={0.3} style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:"clamp(46px,6.5vw,84px)",WebkitTextStroke:"1.5px rgba(212,168,83,0.6)",color:"transparent",letterSpacing:"0.02em" }}/></div>
           </h2>
           {[`Accounts Executive with 5+ years of experience specializing in financial operations, bank reconciliation, GST & TDS compliance, and ledger management. Proven track record working with Kotak Mahindra Life Insurance, RW Promotions, and more.`,
             "Expert in Tally ERP9, Oracle, MS Excel, and Logix software. Certified in Employability Skill Training (CITI Foundation) and Tally ERP9 (ICIT Institution). Detail-oriented and quality-driven in all financial reporting."].map((p,i)=>(

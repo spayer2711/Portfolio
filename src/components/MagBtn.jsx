@@ -15,7 +15,7 @@ export default function MagBtn({ children, primary=false, onClick }) {
       style={{
         position:"relative",overflow:"hidden",
         padding: primary?"16px 36px":"15px 35px",
-        background: primary?"#00FFB2":"transparent",
+        background: primary?"#D4A853":"transparent",
         border: primary?"none":"1px solid rgba(255,255,255,0.18)",
         color: primary?"#06060A":"#fff",
         fontFamily:"'Space Mono',monospace",
@@ -25,8 +25,8 @@ export default function MagBtn({ children, primary=false, onClick }) {
         transition:"transform 0.45s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s, border-color 0.3s, color 0.3s",
       }}
       onMouseEnter={e => {
-        if(primary) e.currentTarget.style.boxShadow="0 0 50px rgba(0,255,178,0.6),0 0 90px rgba(0,255,178,0.2)";
-        else { e.currentTarget.style.borderColor="#00FFB2"; e.currentTarget.style.color="#00FFB2"; }
+        if(primary) e.currentTarget.style.boxShadow="0 0 50px rgba(212,168,83,0.6),0 0 90px rgba(212,168,83,0.2)";
+        else { e.currentTarget.style.borderColor="#D4A853"; e.currentTarget.style.color="#D4A853"; }
       }}
       onMouseLeave={e => {
         setOff({ x:0, y:0 });

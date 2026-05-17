@@ -22,15 +22,15 @@ export default function Hero({ scrollY }) {
     <section style={{ minHeight:"100vh", display:"flex", alignItems:"center", position:"relative", overflow:"hidden", padding: isMobile ? "80px 20px 60px" : "0 52px 120px" }}>
       <div style={{
         position:"absolute", inset:0, pointerEvents:"none",
-        backgroundImage:"linear-gradient(rgba(0,255,178,0.028) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,178,0.028) 1px,transparent 1px)",
+        backgroundImage:"linear-gradient(rgba(212,168,83,0.028) 1px,transparent 1px),linear-gradient(90deg,rgba(212,168,83,0.028) 1px,transparent 1px)",
         backgroundSize:"66px 66px",
         transform:`translateY(${scrollY*0.11}px)`,
         maskImage:"radial-gradient(ellipse 80% 70% at 50% 50%,black 30%,transparent 100%)",
       }}/>
 
       {!isMobile && [
-        {w:500,h:500,top:20,left:30,col:"rgba(0,255,178,0.1)",sp:0.1},
-        {w:320,h:320,top:70,left:10,col:"rgba(0,212,255,0.07)",sp:0.07},
+        {w:500,h:500,top:20,left:30,col:"rgba(212,168,83,0.1)",sp:0.1},
+        {w:320,h:320,top:70,left:10,col:"rgba(43,108,176,0.07)",sp:0.07},
         {w:240,h:240,top:35,left:75,col:"rgba(199,125,255,0.06)",sp:0.14},
       ].map((o,i)=>(
         <div key={i} style={{
@@ -57,15 +57,15 @@ export default function Hero({ scrollY }) {
           <div style={{
             display:"inline-flex", alignItems:"center", gap:10,
             padding:"8px 16px",
-            border:"1px solid rgba(0,255,178,0.22)",
-            background:"rgba(0,255,178,0.04)",
+            border:"1px solid rgba(212,168,83,0.22)",
+            background:"rgba(212,168,83,0.04)",
             marginBottom: isMobile ? 28 : 44,
             opacity:mounted?1:0,
             transform:mounted?"none":"translateY(14px)",
             transition:"all 0.9s ease 0.15s",
           }}>
-            <span style={{ width:7,height:7,borderRadius:"50%",background:"#00FFB2",animation:"glow 2s infinite",display:"block" }}/>
-            <span style={{ fontFamily:"'Space Mono',monospace",fontSize:10,color:"#00FFB2",letterSpacing:"0.14em",textTransform:"uppercase" }}>Open to opportunities</span>
+            <span style={{ width:7,height:7,borderRadius:"50%",background:"#D4A853",animation:"glow 2s infinite",display:"block" }}/>
+            <span style={{ fontFamily:"'Space Mono',monospace",fontSize:10,color:"#D4A853",letterSpacing:"0.14em",textTransform:"uppercase" }}>Open to opportunities</span>
           </div>
 
           {[w1, w2].map((word, wi) => (
@@ -84,7 +84,7 @@ export default function Hero({ scrollY }) {
             <div style={{
               fontFamily:"'Bebas Neue',Impact,sans-serif",
               fontSize:"clamp(52px,15vw,148px)",
-              WebkitTextStroke:"1.5px rgba(0,255,178,0.6)",
+              WebkitTextStroke:"1.5px rgba(212,168,83,0.6)",
               color:"transparent", lineHeight:0.88, letterSpacing:"0.03em",
               opacity:mounted?1:0,
               transform:mounted?"none":"translateY(115%)",
@@ -99,7 +99,7 @@ export default function Hero({ scrollY }) {
             transition:"all 0.9s ease 0.9s",
           }}>
             <p style={{ fontFamily:"'DM Sans',sans-serif",fontSize:isMobile?15:16,lineHeight:1.82,color:"rgba(255,255,255,0.48)",maxWidth:400,margin:0 }}>
-              Seeking a challenging career in <span style={{ color:"#00FFB2" }}>accounts & finance</span> — detail-oriented, quality-focused, and ready to deliver.
+              Seeking a challenging career in <span style={{ color:"#D4A853" }}>accounts & finance</span> — detail-oriented, quality-focused, and ready to deliver.
             </p>
             <div style={{ display:"flex", gap:14 }}>
               <MagBtn primary onClick={()=>document.getElementById("work")?.scrollIntoView({behavior:"smooth"})}>View Work →</MagBtn>
@@ -116,7 +116,7 @@ export default function Hero({ scrollY }) {
           display:"flex", alignItems:"center", gap:14,
           opacity:mounted?0.4:0, transition:"opacity 1s ease 1.4s",
         }}>
-          <div style={{ width:32, height:1, background:"#00FFB2", animation:"expandLine 2s ease-in-out infinite" }}/>
+          <div style={{ width:32, height:1, background:"#D4A853", animation:"expandLine 2s ease-in-out infinite" }}/>
           <span style={{ fontFamily:"'Space Mono',monospace",fontSize:9,color:"#fff",letterSpacing:"0.18em",textTransform:"uppercase" }}>Scroll to explore</span>
         </div>
       )}

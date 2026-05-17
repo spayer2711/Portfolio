@@ -22,7 +22,7 @@ export default function ParticleField() {
         this.vx = (Math.random() - 0.5) * 0.25; this.vy = (Math.random() - 0.5) * 0.25;
         this.r = Math.random() * 1.4 + 0.2;
         this.a = Math.random() * 0.45 + 0.08;
-        this.col = Math.random() > 0.85 ? "#00FFB2" : Math.random() > 0.7 ? "#00D4FF" : "rgba(255,255,255,0.8)";
+        this.col = Math.random() > 0.85 ? "#D4A853" : Math.random() > 0.7 ? "#2B6CB0" : "rgba(255,255,255,0.8)";
       }
       update() {
         this.x += this.vx; this.y += this.vy;
@@ -48,7 +48,7 @@ export default function ParticleField() {
           const d = Math.sqrt(dx * dx + dy * dy);
           if (d < 95) {
             ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(0,255,178,${(1 - d / 95) * 0.11})`; ctx.lineWidth = 0.5; ctx.stroke();
+            ctx.strokeStyle = `rgba(212,168,83,${(1 - d / 95) * 0.11})`; ctx.lineWidth = 0.5; ctx.stroke();
           }
         }
         particles[i].update(); particles[i].draw();

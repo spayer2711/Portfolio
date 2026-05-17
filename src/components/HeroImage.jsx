@@ -64,8 +64,8 @@ export default function HeroImage({ mounted, scrollY }) {
             position:"absolute",
             top: (i+1)*8, left:(i+1)*8,
             width:IMG_W, height:IMG_H,
-            background:`rgba(0,255,178,${0.04 - i*0.01})`,
-            border:`1px solid rgba(0,255,178,${0.12 - i*0.03})`,
+            background:`rgba(212,168,83,${0.04 - i*0.01})`,
+            border:`1px solid rgba(212,168,83,${0.12 - i*0.03})`,
             transition:"transform 0.6s cubic-bezier(0.34,1.56,0.64,1)",
             transform: hovered
               ? `translate(${(i+1)*4}px, ${(i+1)*4}px) rotateX(${tiltX*0.4}deg) rotateY(${tiltY*0.4}deg)`
@@ -105,7 +105,7 @@ export default function HeroImage({ mounted, scrollY }) {
 
           <div style={{
             position:"absolute", inset:0,
-            background:`linear-gradient(160deg, rgba(0,255,178,${hovered?0.18:0.08}) 0%, rgba(0,212,255,${hovered?0.1:0.04}) 50%, transparent 100%)`,
+            background:`linear-gradient(160deg, rgba(212,168,83,${hovered?0.18:0.08}) 0%, rgba(43,108,176,${hovered?0.1:0.04}) 50%, transparent 100%)`,
             mixBlendMode:"color-dodge",
             transition:"all 0.5s ease",
           }}/>
@@ -131,7 +131,7 @@ export default function HeroImage({ mounted, scrollY }) {
             />
             <div style={{
               position:"absolute", inset:0,
-              background:"linear-gradient(135deg,rgba(0,255,178,0.35) 0%,rgba(0,212,255,0.2) 100%)",
+              background:"linear-gradient(135deg,rgba(212,168,83,0.35) 0%,rgba(43,108,176,0.2) 100%)",
               mixBlendMode:"color",
             }}/>
           </div>
@@ -163,7 +163,7 @@ export default function HeroImage({ mounted, scrollY }) {
             position:"absolute", left:0, right:0,
             top:`${scanY}%`,
             height:"2px",
-            background:"linear-gradient(90deg,transparent,rgba(0,255,178,0.6),transparent)",
+            background:"linear-gradient(90deg,transparent,rgba(212,168,83,0.6),transparent)",
             zIndex:6, pointerEvents:"none",
             opacity: hovered ? 0.8 : 0.3,
             transition:"opacity 0.4s",
@@ -184,11 +184,11 @@ export default function HeroImage({ mounted, scrollY }) {
                 top:t, bottom:t==="auto"?"0px":undefined,
                 left:l, right:l==="auto"?"0px":undefined,
                 width:20, height:20, zIndex:8,
-                borderTop: isT ? "2px solid #00FFB2" : undefined,
-                borderBottom: !isT ? "2px solid #00FFB2" : undefined,
-                borderLeft: isL ? "2px solid #00FFB2" : undefined,
-                borderRight: !isL ? "2px solid #00FFB2" : undefined,
-                boxShadow: `${isL?2:-2}px ${isT?2:-2}px 8px rgba(0,255,178,0.4)`,
+                borderTop: isT ? "2px solid #D4A853" : undefined,
+                borderBottom: !isT ? "2px solid #D4A853" : undefined,
+                borderLeft: isL ? "2px solid #D4A853" : undefined,
+                borderRight: !isL ? "2px solid #D4A853" : undefined,
+                boxShadow: `${isL?2:-2}px ${isT?2:-2}px 8px rgba(212,168,83,0.4)`,
                 opacity: hovered ? 1 : 0.5,
                 transition:"opacity 0.3s",
               }}/>
@@ -206,7 +206,7 @@ export default function HeroImage({ mounted, scrollY }) {
           }}>
             <div>
               <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:22,color:"#fff",letterSpacing:"0.06em",lineHeight:1 }}>SNEHA PAYER</div>
-              <div style={{ fontFamily:"'Space Mono',monospace",fontSize:9,color:"#00FFB2",letterSpacing:"0.12em",textTransform:"uppercase",marginTop:2 }}>Accounts Executive | M.Com</div>
+              <div style={{ fontFamily:"'Space Mono',monospace",fontSize:9,color:"#D4A853",letterSpacing:"0.12em",textTransform:"uppercase",marginTop:2 }}>Accounts Executive | M.Com</div>
             </div>
             <div style={{ fontFamily:"'Space Mono',monospace",fontSize:9,color:"rgba(255,255,255,0.35)",letterSpacing:"0.08em" }}>2026</div>
           </div>
@@ -215,11 +215,11 @@ export default function HeroImage({ mounted, scrollY }) {
         <div style={{
           position:"absolute", top: isMobile ? -12 : -16, right: isMobile ? -10 : -20, zIndex:10,
           padding: isMobile ? "6px 10px" : "8px 14px",
-          background:"#00FFB2",
+          background:"#D4A853",
           opacity: mounted ? 1 : 0,
           transform: mounted ? "rotate(3deg)" : "rotate(3deg) scale(0)",
           transition:"all 0.6s cubic-bezier(0.34,1.56,0.64,1) 1.2s",
-          boxShadow:"0 0 24px rgba(0,255,178,0.5)",
+          boxShadow:"0 0 24px rgba(212,168,83,0.5)",
         }}>
           <div style={{ fontFamily:"'Space Mono',monospace",fontSize: isMobile ? 7 : 9,color:"#06060A",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase" }}>Available</div>
           <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize: isMobile ? 14 : 18,color:"#06060A",lineHeight:1,letterSpacing:"0.06em" }}>FOR HIRE</div>
@@ -229,13 +229,13 @@ export default function HeroImage({ mounted, scrollY }) {
           position:"absolute", bottom: isMobile ? 12 : 20, right: isMobile ? -16 : -28, zIndex:10,
           padding: isMobile ? "8px 10px" : "12px 16px",
           background:"rgba(6,6,10,0.95)",
-          border:"1px solid rgba(0,212,255,0.3)",
-          boxShadow:"0 0 20px rgba(0,212,255,0.12)",
+          border:"1px solid rgba(43,108,176,0.3)",
+          boxShadow:"0 0 20px rgba(43,108,176,0.12)",
           opacity: mounted ? 1 : 0,
           transform: mounted ? "none" : "translateX(20px)",
           transition:"all 0.7s cubic-bezier(0.16,1,0.3,1) 1.4s",
         }}>
-          <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize: isMobile ? 28 : 36,color:"#00D4FF",lineHeight:1,textShadow:"0 0 20px rgba(0,212,255,0.5)" }}>{getYearsExp()}</div>
+          <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize: isMobile ? 28 : 36,color:"#2B6CB0",lineHeight:1,textShadow:"0 0 20px rgba(43,108,176,0.5)" }}>{getYearsExp()}</div>
           <div style={{ fontFamily:"'Space Mono',monospace",fontSize: isMobile ? 7 : 8,color:"rgba(255,255,255,0.35)",letterSpacing:"0.1em",textTransform:"uppercase" }}>Years exp.</div>
         </div>
       </div>
@@ -254,14 +254,14 @@ export default function HeroImage({ mounted, scrollY }) {
             onClick={() => setActiveEffect(ef.id)}
             style={{
               padding:"4px 11px",
-              background: activeEffect===ef.id ? "rgba(0,255,178,0.15)" : "rgba(255,255,255,0.03)",
-              border: activeEffect===ef.id ? "1px solid rgba(0,255,178,0.5)" : "1px solid rgba(255,255,255,0.08)",
-              color: activeEffect===ef.id ? "#00FFB2" : "rgba(255,255,255,0.3)",
+              background: activeEffect===ef.id ? "rgba(212,168,83,0.15)" : "rgba(255,255,255,0.03)",
+              border: activeEffect===ef.id ? "1px solid rgba(212,168,83,0.5)" : "1px solid rgba(255,255,255,0.08)",
+              color: activeEffect===ef.id ? "#D4A853" : "rgba(255,255,255,0.3)",
               fontFamily:"'Space Mono',monospace",
               fontSize: isMobile ? 8 : 9, letterSpacing:"0.08em", textTransform:"uppercase",
               cursor: isMobile ? "pointer" : "none",
               transition:"all 0.22s ease",
-              boxShadow: activeEffect===ef.id ? "0 0 12px rgba(0,255,178,0.15)" : "none",
+              boxShadow: activeEffect===ef.id ? "0 0 12px rgba(212,168,83,0.15)" : "none",
             }}
             onMouseEnter={e=>{ if(activeEffect!==ef.id){ e.currentTarget.style.borderColor="rgba(255,255,255,0.2)"; e.currentTarget.style.color="rgba(255,255,255,0.6)"; }}}
             onMouseLeave={e=>{ if(activeEffect!==ef.id){ e.currentTarget.style.borderColor="rgba(255,255,255,0.08)"; e.currentTarget.style.color="rgba(255,255,255,0.3)"; }}}

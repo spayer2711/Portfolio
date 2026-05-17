@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 
 const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-export default function TiltCard({ children, style:s={}, accent="#00FFB2" }) {
+export default function TiltCard({ children, style:s={}, accent="#D4A853" }) {
   const ref = useRef(null);
   const [tilt, setTilt] = useState({ rx:0, ry:0, gx:50, gy:50, active:false });
 

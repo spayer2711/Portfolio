@@ -20,7 +20,7 @@ export default function Nav({ scrollY }) {
       borderBottom:scrolled?"1px solid rgba(255,255,255,0.05)":"none",
       transition:"all 0.5s ease",
     }}>
-      <div style={{ fontFamily:"'Space Mono',monospace",fontSize:isMobile?14:16,color:"#00FFB2",fontWeight:700,letterSpacing:"0.05em",textShadow:"0 0 20px rgba(0,255,178,0.5)" }}>{"<SP />"}</div>
+      <div style={{ fontFamily:"'Space Mono',monospace",fontSize:isMobile?14:16,color:"#D4A853",fontWeight:700,letterSpacing:"0.05em",textShadow:"0 0 20px rgba(212,168,83,0.5)" }}>{"<SP />"}</div>
       {isMobile ? (
         <>
           <button onClick={()=>setMenuOpen(o=>!o)} style={{ background:"none",border:"none",cursor:"pointer",position:"relative",zIndex:510,display:"flex",flexDirection:"column",gap:5,padding:4 }}>
@@ -32,7 +32,7 @@ export default function Nav({ scrollY }) {
             <div style={{ position:"fixed",inset:0,background:"rgba(6,6,10,0.98)",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",gap:32,zIndex:505 }}>
               {links.map(n => (
                 <button key={n} onClick={()=>go(n)} style={{ background:"none",border:"none",cursor:"pointer",fontFamily:"'Space Mono',monospace",fontSize:28,letterSpacing:"0.14em",textTransform:"uppercase",color:"rgba(255,255,255,0.5)",transition:"color 0.25s" }}
-                  onMouseEnter={e=>e.currentTarget.style.color="#00FFB2"}
+                  onMouseEnter={e=>e.currentTarget.style.color="#D4A853"}
                   onMouseLeave={e=>e.currentTarget.style.color="rgba(255,255,255,0.5)"}
                 >{n}</button>
               ))}
@@ -48,7 +48,7 @@ export default function Nav({ scrollY }) {
               letterSpacing:"0.14em",textTransform:"uppercase",
               color:"rgba(255,255,255,0.4)",transition:"color 0.25s",
             }}
-              onMouseEnter={e=>e.currentTarget.style.color="#00FFB2"}
+              onMouseEnter={e=>e.currentTarget.style.color="#D4A853"}
               onMouseLeave={e=>e.currentTarget.style.color="rgba(255,255,255,0.4)"}
             >{n}</button>
           ))}

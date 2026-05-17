@@ -26,9 +26,9 @@ export default function App() {
         body{background:#06060A;color:#fff;cursor:none;overflow-x:hidden;}
         ::-webkit-scrollbar{width:3px;}
         ::-webkit-scrollbar-track{background:#06060A;}
-        ::-webkit-scrollbar-thumb{background:rgba(0,255,178,0.22);}
+        ::-webkit-scrollbar-thumb{background:rgba(212,168,83,0.22);}
         @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-33.33%);}}
-        @keyframes glow{0%,100%{box-shadow:0 0 8px #00FFB2;opacity:1;}50%{box-shadow:0 0 20px #00FFB2,0 0 36px rgba(0,255,178,0.4);opacity:0.65;}}
+        @keyframes glow{0%,100%{box-shadow:0 0 8px #D4A853;opacity:1;}50%{box-shadow:0 0 20px #D4A853,0 0 36px rgba(212,168,83,0.4);opacity:0.65;}}
         @keyframes flicker{0%,100%{opacity:1;}91%{opacity:1;}92%{opacity:0.55;}95%{opacity:1;}98%{opacity:0.75;}99%{opacity:1;}}
         @keyframes expandLine{0%{width:0;opacity:0;}50%{width:48px;opacity:1;}100%{width:48px;opacity:0;}}
         @keyframes shineSweep{0%{left:-50px;}100%{left:110%;}}

@@ -4,14 +4,14 @@ import useMediaQuery from "../hooks/useMediaQuery.js";
 import SplitText from "./SplitText.jsx";
 
 const SKILLS = [
-  { name:"Tally ERP9", level:95, color:"#00FFB2" },
-  { name:"MS Excel", level:92, color:"#00D4FF" },
-  { name:"GST Working & Compliance", level:90, color:"#FFE500" },
-  { name:"TDS Calculation", level:88, color:"#FF6B35" },
-  { name:"Bank Reconciliation", level:93, color:"#C77DFF" },
-  { name:"Oracle Software", level:80, color:"#FF4D8D" },
-  { name:"Ledger Reconciliation", level:90, color:"#00FFB2" },
-  { name:"Debit & Credit Notes", level:85, color:"#00D4FF" },
+  { name:"Tally ERP9", level:95, color:"#D4A853" },
+  { name:"MS Excel", level:92, color:"#2B6CB0" },
+  { name:"GST Working & Compliance", level:90, color:"#F6C842" },
+  { name:"TDS Calculation", level:88, color:"#D97706" },
+  { name:"Bank Reconciliation", level:93, color:"#4C51BF" },
+  { name:"Oracle Software", level:80, color:"#DC2626" },
+  { name:"Ledger Reconciliation", level:90, color:"#D4A853" },
+  { name:"Debit & Credit Notes", level:85, color:"#2B6CB0" },
 ];
 
 const TAGS = ["Tally ERP9","MS Excel","GST","TDS","Bank Reconciliation","Oracle","Ledger Management","Logix","Debit Notes","Credit Notes","Prepaid Expenses","Provisions","Income Reports","Vendor Payments","Sundry Creditors","Sundry Debtors","Audit","Period Closing","Quotations","Price Lists"];
@@ -25,10 +25,10 @@ export default function Skills() {
     <section id="skills" ref={ref} style={{ padding:secPad,background:"rgba(255,255,255,0.013)",borderTop:"1px solid rgba(255,255,255,0.05)",borderBottom:"1px solid rgba(255,255,255,0.05)" }}>
       <div style={{ maxWidth:1200,margin:"0 auto" }}>
         <div style={{ marginBottom: isMobile ? 44 : 72 }}>
-          <p style={{ fontFamily:"'Space Mono',monospace",fontSize:10,color:"#00FFB2",letterSpacing:"0.18em",textTransform:"uppercase",marginBottom:18,opacity:inView?1:0,transition:"opacity 0.6s ease" }}>02 — Skills</p>
+          <p style={{ fontFamily:"'Space Mono',monospace",fontSize:10,color:"#D4A853",letterSpacing:"0.18em",textTransform:"uppercase",marginBottom:18,opacity:inView?1:0,transition:"opacity 0.6s ease" }}>02 — Skills</p>
           <h2 style={{ margin:0 }}>
             <div style={{ overflow:"hidden",display:"block" }}><SplitText text="Expertise &" inView={inView} delay={0.1} style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:"clamp(46px,7vw,90px)",color:"#fff",letterSpacing:"0.02em",lineHeight:0.9 }}/></div>
-            <div style={{ overflow:"hidden",display:"block" }}><SplitText text="Tooling." inView={inView} delay={0.32} style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:"clamp(46px,7vw,90px)",WebkitTextStroke:"1.5px rgba(0,212,255,0.6)",color:"transparent",letterSpacing:"0.02em",lineHeight:0.9 }}/></div>
+            <div style={{ overflow:"hidden",display:"block" }}><SplitText text="Tooling." inView={inView} delay={0.32} style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:"clamp(46px,7vw,90px)",WebkitTextStroke:"1.5px rgba(43,108,176,0.6)",color:"transparent",letterSpacing:"0.02em",lineHeight:0.9 }}/></div>
           </h2>
         </div>
         <div style={{ display:"grid",gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",gap: isMobile ? "16px 0" : "20px 72px",marginBottom: isMobile ? 44 : 72 }}>
@@ -69,7 +69,7 @@ export default function Skills() {
               opacity:inView?1:0,transform:inView?"none":"translateY(10px)",
               transition:`all 0.55s ease ${0.9+i*0.025}s`,
             }}
-              onMouseEnter={e=>{e.target.style.borderColor="#00FFB2";e.target.style.color="#00FFB2";e.target.style.boxShadow="0 0 18px rgba(0,255,178,0.14)";e.target.style.transform="translateY(-3px)";}}
+              onMouseEnter={e=>{e.target.style.borderColor="#D4A853";e.target.style.color="#D4A853";e.target.style.boxShadow="0 0 18px rgba(212,168,83,0.14)";e.target.style.transform="translateY(-3px)";}}
               onMouseLeave={e=>{e.target.style.borderColor="rgba(255,255,255,0.08)";e.target.style.color="rgba(255,255,255,0.35)";e.target.style.boxShadow="none";e.target.style.transform="none";}}
             >{tag}</span>
           ))}
