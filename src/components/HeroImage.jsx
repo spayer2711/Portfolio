@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import useMouse from "../hooks/useMouse.js";
+import useMediaQuery from "../hooks/useMediaQuery.js";
 import { getYearsExp } from "../utils/experience.js";
 import spPhoto from "../assets/sp.jpeg";
 
@@ -15,6 +16,9 @@ const MASK_EFFECTS = [
 ];
 
 export default function HeroImage({ mounted, scrollY }) {
+  const isMobile = useMediaQuery("(max-width:768px)");
+  const IMG_W = isMobile ? 280 : 380;
+  const IMG_H = isMobile ? 354 : 480;
   const [activeEffect, setActiveEffect] = useState("reveal");
   const [hovered, setHovered] = useState(false);
   const [glitch, setGlitch] = useState(false);
@@ -52,14 +56,14 @@ export default function HeroImage({ mounted, scrollY }) {
       transition:"opacity 1.1s ease 0.6s, transform 1.1s cubic-bezier(0.16,1,0.3,1) 0.6s",
     }}>
       <div style={{
-        position:"relative", width:380, height:480,
+        position:"relative", width:IMG_W, height:IMG_H,
         perspective:900,
       }}>
         {[...Array(3)].map((_, i) => (
           <div key={i} style={{
             position:"absolute",
             top: (i+1)*8, left:(i+1)*8,
-            width:380, height:480,
+            width:IMG_W, height:IMG_H,
             background:`rgba(0,255,178,${0.04 - i*0.01})`,
             border:`1px solid rgba(0,255,178,${0.12 - i*0.03})`,
             transition:"transform 0.6s cubic-bezier(0.34,1.56,0.64,1)",
@@ -74,14 +78,14 @@ export default function HeroImage({ mounted, scrollY }) {
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           style={{
-            position:"relative", width:380, height:480,
+            position:"relative", width:IMG_W, height:IMG_H,
             overflow:"hidden",
             border:"1px solid rgba(255,255,255,0.1)",
             transform: `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(${hovered?1.02:1})`,
             transition: hovered
               ? "transform 0.15s ease"
               : "transform 0.7s cubic-bezier(0.34,1.56,0.64,1)",
-            cursor:"none",
+            cursor: isMobile ? "auto" : "none",
             background:"#0d0d12",
           }}
         >
@@ -209,21 +213,21 @@ export default function HeroImage({ mounted, scrollY }) {
         </div>
 
         <div style={{
-          position:"absolute", top:-16, right:-20, zIndex:10,
-          padding:"8px 14px",
+          position:"absolute", top: isMobile ? -12 : -16, right: isMobile ? -10 : -20, zIndex:10,
+          padding: isMobile ? "6px 10px" : "8px 14px",
           background:"#00FFB2",
           opacity: mounted ? 1 : 0,
           transform: mounted ? "rotate(3deg)" : "rotate(3deg) scale(0)",
           transition:"all 0.6s cubic-bezier(0.34,1.56,0.64,1) 1.2s",
           boxShadow:"0 0 24px rgba(0,255,178,0.5)",
         }}>
-          <div style={{ fontFamily:"'Space Mono',monospace",fontSize:9,color:"#06060A",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase" }}>Available</div>
-          <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:18,color:"#06060A",lineHeight:1,letterSpacing:"0.06em" }}>FOR HIRE</div>
+          <div style={{ fontFamily:"'Space Mono',monospace",fontSize: isMobile ? 7 : 9,color:"#06060A",fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase" }}>Available</div>
+          <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize: isMobile ? 14 : 18,color:"#06060A",lineHeight:1,letterSpacing:"0.06em" }}>FOR HIRE</div>
         </div>
 
         <div style={{
-          position:"absolute", bottom:20, right:-28, zIndex:10,
-          padding:"12px 16px",
+          position:"absolute", bottom: isMobile ? 12 : 20, right: isMobile ? -16 : -28, zIndex:10,
+          padding: isMobile ? "8px 10px" : "12px 16px",
           background:"rgba(6,6,10,0.95)",
           border:"1px solid rgba(0,212,255,0.3)",
           boxShadow:"0 0 20px rgba(0,212,255,0.12)",
@@ -231,8 +235,8 @@ export default function HeroImage({ mounted, scrollY }) {
           transform: mounted ? "none" : "translateX(20px)",
           transition:"all 0.7s cubic-bezier(0.16,1,0.3,1) 1.4s",
         }}>
-          <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:36,color:"#00D4FF",lineHeight:1,textShadow:"0 0 20px rgba(0,212,255,0.5)" }}>{getYearsExp()}</div>
-          <div style={{ fontFamily:"'Space Mono',monospace",fontSize:8,color:"rgba(255,255,255,0.35)",letterSpacing:"0.1em",textTransform:"uppercase" }}>Years exp.</div>
+          <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize: isMobile ? 28 : 36,color:"#00D4FF",lineHeight:1,textShadow:"0 0 20px rgba(0,212,255,0.5)" }}>{getYearsExp()}</div>
+          <div style={{ fontFamily:"'Space Mono',monospace",fontSize: isMobile ? 7 : 8,color:"rgba(255,255,255,0.35)",letterSpacing:"0.1em",textTransform:"uppercase" }}>Years exp.</div>
         </div>
       </div>
 
@@ -241,7 +245,7 @@ export default function HeroImage({ mounted, scrollY }) {
         opacity: mounted ? 1 : 0,
         transition:"opacity 0.8s ease 1.6s",
         justifyContent:"center",
-        maxWidth:380,
+        maxWidth:IMG_W,
       }}>
         {MASK_EFFECTS.map(ef => (
           <button
@@ -254,8 +258,8 @@ export default function HeroImage({ mounted, scrollY }) {
               border: activeEffect===ef.id ? "1px solid rgba(0,255,178,0.5)" : "1px solid rgba(255,255,255,0.08)",
               color: activeEffect===ef.id ? "#00FFB2" : "rgba(255,255,255,0.3)",
               fontFamily:"'Space Mono',monospace",
-              fontSize:9, letterSpacing:"0.08em", textTransform:"uppercase",
-              cursor:"none",
+              fontSize: isMobile ? 8 : 9, letterSpacing:"0.08em", textTransform:"uppercase",
+              cursor: isMobile ? "pointer" : "none",
               transition:"all 0.22s ease",
               boxShadow: activeEffect===ef.id ? "0 0 12px rgba(0,255,178,0.15)" : "none",
             }}

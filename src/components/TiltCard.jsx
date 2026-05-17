@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 
+const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
 export default function TiltCard({ children, style:s={}, accent="#00FFB2" }) {
   const ref = useRef(null);
   const [tilt, setTilt] = useState({ rx:0, ry:0, gx:50, gy:50, active:false });
@@ -12,7 +14,7 @@ export default function TiltCard({ children, style:s={}, accent="#00FFB2" }) {
   const onLeave = () => setTilt({ rx:0, ry:0, gx:50, gy:50, active:false });
 
   return (
-    <div ref={ref} data-h="true" onMouseMove={onMove} onMouseEnter={onMove} onMouseLeave={onLeave} style={{ perspective:900, cursor:"none", ...s }}>
+    <div ref={ref} data-h="true" onMouseMove={onMove} onMouseEnter={onMove} onMouseLeave={onLeave} style={{ perspective:900, cursor: isTouch ? "auto" : "none", ...s }}>
       <div style={{
         transform:`rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg) scale(${tilt.active?1.025:1})`,
         transition: tilt.active?"transform 0.1s ease":"transform 0.65s cubic-bezier(0.34,1.56,0.64,1)",

@@ -1,6 +1,9 @@
 import { useRef, useEffect, useState } from "react";
 
 export default function Cursor() {
+  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isTouch) return null;
+
   const dot = useRef(null);
   const ring = useRef(null);
   const pos = useRef({ x: 0, y: 0 });

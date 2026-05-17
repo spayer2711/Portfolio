@@ -1,35 +1,75 @@
 import { useState, useEffect, useRef } from "react";
 import { getYearsExp } from "../utils/experience.js";
+import useMediaQuery from "../hooks/useMediaQuery.js";
 
-const SYSTEM_PROMPT = () => `You are SP·AI — the personal AI assistant embedded in Shubham Payer's portfolio website. Shubham Payer is a frontend developer with ${getYearsExp()} years of experience.
+const PAGE_DATA = {
+  name: "Shubham Payer",
+  role: "Frontend Developer | React.js Specialist",
+  tagline: "Building enterprise-grade web apps with React, real-time interfaces, and pixel-perfect UIs.",
+  status: "Open to opportunities",
+  experience: getYearsExp(),
+  experienceStart: "February 16, 2021",
+  stats: [
+    { value: getYearsExp(), label: "Years experience" },
+    { value: "20+", label: "Enterprise projects" },
+    { value: "4", label: "Junior devs mentored" },
+    { value: "2x", label: "Performer nominee" },
+  ],
+  clients: ["PNB", "Mumbai Port Trust", "Mauritius Government", "NISG", "ABSA Bank"],
+  skills: [
+    { name: "React.js / Hooks / Context API", level: "95%" },
+    { name: "JavaScript (ES6+)", level: "92%" },
+    { name: "HTML5 / CSS3 / SCSS / Tailwind", level: "93%" },
+    { name: "Node.js / Express.js", level: "78%" },
+    { name: "Socket.io / Real-time", level: "85%" },
+    { name: "Bootstrap / Material UI", level: "88%" },
+    { name: "Git / Webpack / Vite", level: "86%" },
+    { name: "REST APIs / MongoDB", level: "80%" },
+  ],
+  tags: ["HTML5","CSS3","JavaScript","ES6+","React.js","React Hooks","Context API","Node.js","Express.js","REST APIs","MongoDB","Socket.io","SCSS","Tailwind CSS","Bootstrap","Material UI","Git","GitHub","Webpack","Vite","Chrome DevTools","Agile","Scrum"],
+  projects: [
+    { title: "Talkk – Conversational AI Platform", tech: ["React.js","Socket.io","SCSS","Node.js"], desc: "Real-time chatbot platform with CMS, analytics, and bot training. Custom deployments for PNB, Mumbai Port Trust, Mauritius Government, NISG." },
+    { title: "ABSA – Banking Onboarding", tech: ["React.js","REST APIs","Form Optimization"], desc: "Migrated entire customer onboarding from legacy Node.js UI to React. Achieved faster performance and reduced DOM complexity." },
+    { title: "Mortgage Market – Loan Platform", tech: ["React.js","PHP","Bootstrap"], desc: "Secure loan and mortgage platform with form handling, dashboards, and mobile-responsive UI." },
+    { title: "AI Agent (POC)", tech: ["React.js","Socket.io","AI"], desc: "Real-time AI assistant interface with digital-human conversational UI and multi-channel broadcast architecture." },
+  ],
+  email: "spayer2711@gmail.com",
+  links: ["GitHub", "LinkedIn", "Email"],
+};
 
-KEY FACTS ABOUT SHUBHAM:
-- Name: Shubham Payer
-- Role: Frontend Developer | React.js Specialist
-- Experience: ${getYearsExp()} years specializing in React.js, real-time interfaces, and responsive UI development
-- Skills: React.js, React Hooks, Context API, JavaScript (ES6+), HTML5, CSS3, SCSS, Tailwind CSS, Bootstrap, Material UI, Node.js, Express.js, REST APIs, MongoDB, Socket.io
-- Enterprise clients: PNB (Punjab National Bank), Mumbai Port Trust, Mauritius Government, NISG, ABSA Bank
-- Projects: 20+ enterprise projects shipped, chatbot platforms, CMS solutions
-- Notable work: Talkk Conversational AI Platform, ABSA Banking Onboarding, Mortgage Market Platform, AI Agent POC
-- Availability: Open to opportunities
-- Contact: spayer2711@gmail.com | +91 7208921050 | Mumbai
-- Education: MSc IT (Mumbai University), BSc IT (Mumbai University)
-- Recognition: Quick Learner Award, 2× nominated Performer of the Quarter/Year, Mentored 4 junior developers
-- Philosophy: Clean code, pixel-perfect UIs, performance-first approach
+const SYSTEM_PROMPT = `You are SP·AI — the personal AI assistant on Shubham Payer's portfolio website.
 
-RESPONSE STYLE — THIS IS CRITICAL:
-- You MUST format every response using special markdown-like syntax that the UI will render beautifully
-- Keep responses concise but punchy (2-5 sentences max per section)
-- Use these special tags in your responses:
-  [[highlight]]text[[/highlight]] — for glowing neon-green highlighted key terms
-  [[tag]]label[[/tag]] — for small tech/skill badge tags
-  [[stat]]number::label[[/stat]] — for animated stat callouts
-  [[block]]title::content[[/block]] — for a styled info block
-  [[link]]label::url[[/link]] — for styled links (use # as url placeholder)
-- Always start with a short punchy line, then use the formatting
-- Be confident, witty, and technical — like a developer who knows their craft
-- Never use bullet points or boring plain text — every response must feel designed
-- If asked about hiring/working together, be enthusiastic and direct them to contact`;
+ABOUT SHUBHAM:
+- Name: ${PAGE_DATA.name}
+- Role: ${PAGE_DATA.role}
+- Tagline: ${PAGE_DATA.tagline}
+- Status: ${PAGE_DATA.status}
+- Experience: ${PAGE_DATA.experience} years (since ${PAGE_DATA.experienceStart})
+- Stats: ${PAGE_DATA.stats.map(s => `${s.value} ${s.label}`).join(", ")}
+- Clients: ${PAGE_DATA.clients.join(", ")}
+
+SKILLS:
+${PAGE_DATA.skills.map(s => `- ${s.name}: ${s.level}`).join("\n")}
+
+TECH TAGS: ${PAGE_DATA.tags.join(", ")}
+
+PROJECTS:
+${PAGE_DATA.projects.map(p => `- ${p.title} [${p.tech.join(", ")}]: ${p.desc}`).join("\n")}
+
+CONTACT: ${PAGE_DATA.email}
+
+RULES:
+- ONLY answer questions about Shubham Payer, his skills, projects, experience, or portfolio.
+- If the user asks anything else, respond: "Sorry, I'm only able to answer questions about Shubham Payer and his work."
+- Keep responses concise (2-5 sentences).
+- Use these special tags for formatting. CRITICAL: always use the EXACT format shown:
+  [[highlight]]text[[/highlight]] — e.g. [[highlight]]React.js[[/highlight]]
+  [[tag]]label[[/tag]] — e.g. [[tag]]React[[/tag]]
+  [[stat]]value::label[[/stat]] — e.g. [[stat]]5+::years exp[[/stat]] or [[stat]]20+::projects[[/stat]]
+  [[block]]title::content[[/block]] — e.g. [[block]]Key Skill::Form optimization and DOM performance[[/block]]
+  [[link]]label::url[[/link]] — e.g. [[link]]GitHub::#[[/link]]
+- NEVER write raw tags without the :: separator for stat/block/link tags.
+- Be confident, technical, and friendly.`;
 
 const QUICK_PROMPTS = [
   { label: "Who is Shubham?", q: "Tell me about Shubham Payer" },
@@ -46,9 +86,9 @@ function parseResponse(text) {
   const patterns = [
     { re: /\[\[highlight\]\](.*?)\[\[\/highlight\]\]/gs, render: (m,c) => <span key={key++} style={{color:"#00FFB2",fontWeight:600,textShadow:"0 0 16px rgba(0,255,178,0.5)"}}>{c}</span> },
     { re: /\[\[tag\]\](.*?)\[\[\/tag\]\]/gs, render: (m,c) => <span key={key++} style={{display:"inline-block",padding:"2px 9px",background:"rgba(0,255,178,0.1)",border:"1px solid rgba(0,255,178,0.3)",color:"#00FFB2",fontFamily:"'Space Mono',monospace",fontSize:"0.72em",letterSpacing:"0.06em",margin:"0 3px",verticalAlign:"middle"}}>{c}</span> },
-    { re: /\[\[stat\]\](.*?)::(.*?)\[\[\/stat\]\]/gs, render: (m,num,lbl) => <span key={key++} style={{display:"inline-flex",flexDirection:"column",alignItems:"center",padding:"6px 14px",background:"rgba(0,212,255,0.07)",border:"1px solid rgba(0,212,255,0.25)",margin:"4px 6px",verticalAlign:"middle"}}><span style={{fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:"1.6em",color:"#00D4FF",lineHeight:1}}>{num}</span><span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.6em",color:"rgba(255,255,255,0.4)",letterSpacing:"0.1em",textTransform:"uppercase"}}>{lbl}</span></span> },
-    { re: /\[\[block\]\](.*?)::(.*?)\[\[\/block\]\]/gs, render: (m,title,content) => <div key={key++} style={{margin:"10px 0",padding:"12px 16px",background:"rgba(255,255,255,0.03)",borderLeft:"2px solid #00FFB2",borderRadius:"0 4px 4px 0"}}><div style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7em",color:"#00FFB2",letterSpacing:"0.1em",textTransform:"uppercase",marginBottom:4}}>{title}</div><div style={{fontSize:"0.88em",color:"rgba(255,255,255,0.65)",lineHeight:1.7}}>{content}</div></div> },
-    { re: /\[\[link\]\](.*?)::(.*?)\[\[\/link\]\]/gs, render: (m,lbl) => <span key={key++} style={{color:"#00D4FF",cursor:"pointer",borderBottom:"1px solid rgba(0,212,255,0.4)",paddingBottom:"1px"}}>{lbl} ↗</span> },
+    { re: /\[\[stat\]\]([\s\S]*?)\[\[\/stat\]\]/gs, render: (m,content) => { const [num, ...rest] = content.split("::"); const lbl = rest.join("::"); return <span key={key++} style={{display:"inline-flex",flexDirection:"column",alignItems:"center",padding:"6px 14px",background:"rgba(0,212,255,0.07)",border:"1px solid rgba(0,212,255,0.25)",margin:"4px 6px",verticalAlign:"middle"}}><span style={{fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:"1.6em",color:"#00D4FF",lineHeight:1}}>{num}</span>{lbl && <span style={{fontFamily:"'Space Mono',monospace",fontSize:"0.6em",color:"rgba(255,255,255,0.4)",letterSpacing:"0.1em",textTransform:"uppercase"}}>{lbl}</span>}</span>; } },
+    { re: /\[\[block\]\]([\s\S]*?)\[\[\/block\]\]/gs, render: (m,content) => { const [title, ...rest] = content.split("::"); const body = rest.join("::"); return <div key={key++} style={{margin:"10px 0",padding:"12px 16px",background:"rgba(255,255,255,0.03)",borderLeft:"2px solid #00FFB2",borderRadius:"0 4px 4px 0"}}><div style={{fontFamily:"'Space Mono',monospace",fontSize:"0.7em",color:"#00FFB2",letterSpacing:"0.1em",textTransform:"uppercase",marginBottom:4}}>{title}</div><div style={{fontSize:"0.88em",color:"rgba(255,255,255,0.65)",lineHeight:1.7}}>{body}</div></div>; } },
+    { re: /\[\[link\]\]([\s\S]*?)\[\[\/link\]\]/gs, render: (m,content) => { const [label, ...rest] = content.split("::"); return <span key={key++} style={{color:"#00D4FF",cursor:"pointer",borderBottom:"1px solid rgba(0,212,255,0.4)",paddingBottom:"1px"}}>{label} ↗</span>; } },
   ];
 
   let nodes = [text];
@@ -137,6 +177,7 @@ function ChatMessage({ msg, isNew }) {
 }
 
 export default function Chatbot() {
+  const isMobile = useMediaQuery("(max-width:768px)");
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([
     { role:"assistant", content:`Hello! I'm [[highlight]]SP·AI[[/highlight]] — Shubham's personal assistant.\n\nAsk me anything about Shubham's [[tag]]skills[[/tag]] [[tag]]projects[[/tag]] [[tag]]experience[[/tag]] or [[tag]]availability[[/tag]]. I'll give you the real story. 🚀`, ts: Date.now(), id: 0 }
@@ -163,21 +204,26 @@ export default function Chatbot() {
     setMessages(prev => [...prev, userMsg]);
     setNewMsgId(userMsg.id);
     setLoading(true);
-
+    const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
     try {
       const history = [...messages, userMsg].map(m => ({ role: m.role, content: m.content }));
-      const res = await fetch("https://api.anthropic.com/v1/messages", {
+      const res = await fetch("https://api.openai.com/v1/chat/completions", {
         method:"POST",
-        headers:{ "Content-Type":"application/json" },
+        headers:{
+          "Content-Type":"application/json",
+          "Authorization": `Bearer ${apiKey}`,
+        },
         body: JSON.stringify({
-          model:"claude-sonnet-4-20250514",
-          max_tokens:1000,
-          system: SYSTEM_PROMPT(),
-          messages: history,
+          model: "gpt-4o-mini",
+          messages: [
+            { role: "system", content: SYSTEM_PROMPT },
+            ...history,
+          ],
+          max_tokens: 1000,
         }),
       });
       const data = await res.json();
-      const reply = data.content?.map(b => b.text || "").join("") || "Sorry, I couldn't process that.";
+      const reply = data.choices?.[0]?.message?.content || "Sorry, I couldn't process that.";
       const aiMsg = { role:"assistant", content:reply, ts:Date.now(), id:msgId.current++ };
       setMessages(prev => [...prev, aiMsg]);
       setNewMsgId(aiMsg.id);
@@ -193,7 +239,7 @@ export default function Chatbot() {
   return (
     <>
       <div style={{
-        position:"fixed", bottom:32, right:32, zIndex:9000,
+        position:"fixed", bottom: isMobile ? 16 : 32, right: isMobile ? 16 : 32, zIndex:9000,
         opacity: mounted ? 1 : 0,
         transform: mounted ? "none" : "translateY(20px) scale(0.8)",
         transition:"opacity 0.6s ease, transform 0.6s cubic-bezier(0.34,1.56,0.64,1)",
@@ -211,12 +257,12 @@ export default function Chatbot() {
           data-h="true"
           onClick={() => setOpen(o => !o)}
           style={{
-            width:58, height:58, borderRadius:"50%",
+            width: isMobile ? 50 : 58, height: isMobile ? 50 : 58, borderRadius:"50%",
             background: open
               ? "rgba(255,255,255,0.08)"
               : "linear-gradient(135deg,#00FFB2 0%,#00D4FF 100%)",
             border: open ? "1px solid rgba(255,255,255,0.15)" : "none",
-            cursor:"none",
+            cursor: isMobile ? "pointer" : "none",
             display:"flex", alignItems:"center", justifyContent:"center",
             boxShadow: open ? "none" : "0 0 32px rgba(0,255,178,0.45), 0 0 64px rgba(0,255,178,0.15)",
             transition:"all 0.4s cubic-bezier(0.34,1.56,0.64,1)",
@@ -241,9 +287,10 @@ export default function Chatbot() {
       </div>
 
       <div style={{
-        position:"fixed", bottom:104, right:32, zIndex:8999,
-        width:400,
-        maxHeight: open ? 600 : 0,
+        position:"fixed", bottom: isMobile ? 80 : 104, right: isMobile ? 12 : 32, zIndex:8999,
+        width: isMobile ? "auto" : 400,
+        left: isMobile ? 12 : "auto",
+        maxHeight: isMobile ? (open ? "calc(100vh - 100px)" : 0) : (open ? 600 : 0),
         opacity: open ? 1 : 0,
         transform: open ? "translateY(0) scale(1)" : "translateY(24px) scale(0.96)",
         transition:"all 0.45s cubic-bezier(0.16,1,0.3,1)",
@@ -322,7 +369,7 @@ export default function Chatbot() {
                 color:"rgba(255,255,255,0.5)",
                 fontFamily:"'Space Mono',monospace",
                 fontSize:9, letterSpacing:"0.06em",
-                cursor:"none",
+                cursor: isMobile ? "pointer" : "none",
                 transition:"all 0.2s",
                 opacity: loading ? 0.4 : 1,
               }}
@@ -356,9 +403,9 @@ export default function Chatbot() {
               style={{
                 flex:1, background:"none", border:"none", outline:"none",
                 fontFamily:"'DM Sans',sans-serif",
-                fontSize:14, color:"rgba(255,255,255,0.85)",
+                fontSize: isMobile ? 16 : 14, color:"rgba(255,255,255,0.85)",
                 lineHeight:1.5, resize:"none",
-                cursor:"none",
+                cursor: isMobile ? "auto" : "none",
                 caretColor:"#00FFB2",
               }}
             />
@@ -369,7 +416,7 @@ export default function Chatbot() {
               style={{
                 width:32, height:32, borderRadius:"50%",
                 background: input.trim() && !loading ? "linear-gradient(135deg,#00FFB2,#00D4FF)" : "rgba(255,255,255,0.06)",
-                border:"none", cursor:"none",
+                border:"none", cursor: isMobile ? "pointer" : "none",
                 display:"flex", alignItems:"center", justifyContent:"center",
                 flexShrink:0,
                 transition:"all 0.3s cubic-bezier(0.34,1.56,0.64,1)",
@@ -382,7 +429,7 @@ export default function Chatbot() {
             </button>
           </div>
           <div style={{ marginTop:8, textAlign:"center" }}>
-            <span style={{ fontFamily:"'Space Mono',monospace", fontSize:8.5, color:"rgba(255,255,255,0.15)", letterSpacing:"0.08em" }}>Powered by Claude AI · Press Enter to send</span>
+            <span style={{ fontFamily:"'Space Mono',monospace", fontSize:8.5, color:"rgba(255,255,255,0.15)", letterSpacing:"0.08em" }}>Powered by OpenAI · Press Enter to send</span>
           </div>
         </div>
       </div>

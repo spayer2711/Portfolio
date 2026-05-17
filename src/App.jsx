@@ -36,9 +36,17 @@ export default function App() {
         @keyframes dotPulse{0%,100%{opacity:0.2;transform:scale(0.8);}50%{opacity:1;transform:scale(1);}}
         @keyframes msgSlideIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
         @keyframes rippleOut{0%{opacity:0.7;transform:scale(1);}100%{opacity:0;transform:scale(1.8);}}
+        @keyframes modalFadeIn{from{opacity:0;}to{opacity:1;}}
+        @keyframes modalSlideUp{from{opacity:0;transform:translateY(40px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
 
         button{outline:none;}
         textarea::placeholder{color:rgba(255,255,255,0.22);}
+        @media(max-width:768px){
+          body{cursor:auto;}
+          .nav-links{display:none!important;}
+          .nav-links.open{display:flex!important;flex-direction:column;position:fixed;top:0;left:0;right:0;background:rgba(6,6,10,0.98);height:100vh;justify-content:center;align-items:center;gap:32px;z-index:490;}
+          .hero-sidebar{display:none!important;}
+        }
       `}</style>
 
       {!loaded && <Loader onDone={()=>setLoaded(true)}/>}
@@ -48,7 +56,7 @@ export default function App() {
       <ProgressBar progress={progress}/>
       <Nav scrollY={scrollY}/>
 
-      <main style={{ position:"relative",zIndex:1 }}>
+      <main style={{ position:"relative",zIndex:1,paddingTop:78 }}>
         <Hero scrollY={scrollY}/>
         <Marquee/>
         <About/>
