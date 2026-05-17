@@ -7,7 +7,7 @@ export default function Contact() {
   const isMobile = useMediaQuery("(max-width:768px)");
   const { ref, inView } = useInView();
   const [copied, setCopied] = useState(false);
-  const email = "spayer2711@gmail.com";
+  const email = "snhpayer@gmail.com";
   const copy = () => { navigator.clipboard.writeText(email); setCopied(true); setTimeout(()=>setCopied(false),2200); };
   const secPad = isMobile ? "80px 20px 60px" : "130px 52px 80px";
 

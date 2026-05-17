@@ -205,8 +205,8 @@ export default function HeroImage({ mounted, scrollY }) {
             transition:"all 0.35s ease",
           }}>
             <div>
-              <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:22,color:"#fff",letterSpacing:"0.06em",lineHeight:1 }}>SHUBHAM PAYER</div>
-              <div style={{ fontFamily:"'Space Mono',monospace",fontSize:9,color:"#00FFB2",letterSpacing:"0.12em",textTransform:"uppercase",marginTop:2 }}>Frontend Developer | React.js Specialist</div>
+              <div style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:22,color:"#fff",letterSpacing:"0.06em",lineHeight:1 }}>SNEHA PAYER</div>
+              <div style={{ fontFamily:"'Space Mono',monospace",fontSize:9,color:"#00FFB2",letterSpacing:"0.12em",textTransform:"uppercase",marginTop:2 }}>Accounts Executive | M.Com</div>
             </div>
             <div style={{ fontFamily:"'Space Mono',monospace",fontSize:9,color:"rgba(255,255,255,0.35)",letterSpacing:"0.08em" }}>2026</div>
           </div>

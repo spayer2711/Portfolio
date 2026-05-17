@@ -4,17 +4,17 @@ import useMediaQuery from "../hooks/useMediaQuery.js";
 import SplitText from "./SplitText.jsx";
 
 const SKILLS = [
-  { name:"React.js / Hooks / Context API", level:95, color:"#00FFB2" },
-  { name:"JavaScript (ES6+)", level:92, color:"#00D4FF" },
-  { name:"HTML5 / CSS3 / SCSS / Tailwind", level:93, color:"#FFE500" },
-  { name:"Node.js / Express.js", level:58, color:"#FF6B35" },
-  { name:"Socket.io / Real-time", level:85, color:"#C77DFF" },
-  { name:"Bootstrap / Material UI", level:88, color:"#FF4D8D" },
-  { name:"Git / Webpack / Vite", level:86, color:"#00FFB2" },
-  { name:"REST APIs / MongoDB", level:80, color:"#00D4FF" },
+  { name:"Tally ERP9", level:95, color:"#00FFB2" },
+  { name:"MS Excel", level:92, color:"#00D4FF" },
+  { name:"GST Working & Compliance", level:90, color:"#FFE500" },
+  { name:"TDS Calculation", level:88, color:"#FF6B35" },
+  { name:"Bank Reconciliation", level:93, color:"#C77DFF" },
+  { name:"Oracle Software", level:80, color:"#FF4D8D" },
+  { name:"Ledger Reconciliation", level:90, color:"#00FFB2" },
+  { name:"Debit & Credit Notes", level:85, color:"#00D4FF" },
 ];
 
-const TAGS = ["HTML5","CSS3","JavaScript","ES6+","React.js","React Hooks","Context API","Node.js","Express.js","REST APIs","MongoDB","Socket.io","SCSS","Tailwind CSS","Bootstrap","Material UI","Git","GitHub","Webpack","Vite","Chrome DevTools","Agile","Scrum"];
+const TAGS = ["Tally ERP9","MS Excel","GST","TDS","Bank Reconciliation","Oracle","Ledger Management","Logix","Debit Notes","Credit Notes","Prepaid Expenses","Provisions","Income Reports","Vendor Payments","Sundry Creditors","Sundry Debtors","Audit","Period Closing","Quotations","Price Lists"];
 
 export default function Skills() {
   const isMobile = useMediaQuery("(max-width:768px)");

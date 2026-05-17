@@ -11,7 +11,7 @@ export default function Hero({ scrollY }) {
   const parallax = scrollY * 0.32;
   const isMobile = useMediaQuery("(max-width:768px)");
 
-  const w1 = useScramble("SHUBHAM", mounted, 42);
+  const w1 = useScramble("SNEHA", mounted, 42);
   const w2 = useScramble("PAYER", mounted, 42);
 
   useEffect(() => { setTimeout(() => setMounted(true), 200); }, []);
@@ -89,7 +89,7 @@ export default function Hero({ scrollY }) {
               opacity:mounted?1:0,
               transform:mounted?"none":"translateY(115%)",
               transition:"all 1s cubic-bezier(0.16,1,0.3,1) 0.48s",
-            }}>DEV</div>
+            }}>ACCOUNTS</div>
           </div>
 
           <div style={{
@@ -99,7 +99,7 @@ export default function Hero({ scrollY }) {
             transition:"all 0.9s ease 0.9s",
           }}>
             <p style={{ fontFamily:"'DM Sans',sans-serif",fontSize:isMobile?15:16,lineHeight:1.82,color:"rgba(255,255,255,0.48)",maxWidth:400,margin:0 }}>
-              Building <span style={{ color:"#00FFB2" }}>enterprise-grade</span> web apps with React, real-time interfaces, and pixel-perfect UIs.
+              Seeking a challenging career in <span style={{ color:"#00FFB2" }}>accounts & finance</span> — detail-oriented, quality-focused, and ready to deliver.
             </p>
             <div style={{ display:"flex", gap:14 }}>
               <MagBtn primary onClick={()=>document.getElementById("work")?.scrollIntoView({behavior:"smooth"})}>View Work →</MagBtn>
@@ -128,7 +128,7 @@ export default function Hero({ scrollY }) {
         color:"rgba(255,255,255,0.16)", letterSpacing:"0.2em", textTransform:"uppercase",
         opacity:mounted?1:0, transition:"opacity 1s ease 1.8s",
         whiteSpace:"nowrap",
-      }}>React · JavaScript · Node.js · Socket.io</div>
+      }}>Tally · Excel · GST · TDS · Oracle</div>
     </section>
   );
 }

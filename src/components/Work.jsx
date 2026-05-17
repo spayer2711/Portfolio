@@ -6,21 +6,25 @@ import TiltCard from "./TiltCard.jsx";
 import ProjectModal from "./ProjectModal.jsx";
 
 const PROJECTS = [
-  { id:"01",title:"Talkk – Conversational AI Platform",tech:["React.js","Socket.io","SCSS","Node.js"],desc:"Real-time chatbot platform with CMS, analytics, and bot training. Custom deployments for PNB, Mumbai Port Trust, Mauritius Government, NISG.",accent:"#00FFB2",
-    features:["Real-time multi-user chat with Socket.io","Admin CMS for bot training and conversation analytics","Enterprise-grade deployments for PNB, Mumbai Port Trust, Mauritius Government, NISG","Analytics dashboard tracking message volume and user engagement"],
-    links:[{label:"View Project",url:"#"}],
+  { id:"01",title:"Kotak Mahindra Life Insurance",tech:["Oracle","MS Excel","Income Reports","Bank Rec."],desc:"Currently managing accounts and financial operations for a leading life insurance company.",accent:"#00FFB2",
+    features:["Managing accounts and financial operations","Income reporting and bank reconciliation","Oracle software management for financial entries","GST working on insurance policy charges"],
+    links:[{label:"Current Role",url:"#"}],
   },
-  { id:"02",title:"ABSA – Banking Onboarding",tech:["React.js","REST APIs","Form Optimization"],desc:"Migrated entire customer onboarding from legacy Node.js UI to React. Achieved faster performance and reduced DOM complexity.",accent:"#00D4FF",
-    features:["Migrated legacy customer onboarding from Node.js UI to React","Optimized form handling reducing DOM complexity by 40%","Streamlined multi-step application workflow","Enterprise banking-grade security and validation"],
-    links:[{label:"View Project",url:"#"}],
+  { id:"02",title:"Teamlease – Kotak Mahindra Life Insurance",tech:["Oracle","GST","TDS","MS Excel"],desc:"Managed income reports, bank reconciliation, GST working, and period closing activities for Kotak Mahindra Life Insurance.",accent:"#00D4FF",
+    features:["Preparation of Income Report and Bank Reconciliation of Statements","GST working on various charges related to insurance policies","Uploading and managing entries in Oracle Software","Assisted in period closing and audit-related activities"],
+    links:[{label:"View Experience",url:"#"}],
   },
-  { id:"03",title:"Mortgage Market – Loan Platform",tech:["React.js","PHP","Bootstrap"],desc:"Secure loan and mortgage platform with form handling, dashboards, and mobile-responsive UI.",accent:"#FFE500",
-    features:["Secure loan application and mortgage processing","Interactive dashboards for application tracking","Fully responsive mobile-first UI","Comprehensive form validation and data handling"],
-    links:[{label:"View Project",url:"#"}],
+  { id:"03",title:"RW Promotions Pvt Ltd",tech:["Tally ERP9","TDS","Bank Rec.","Vendor Payments"],desc:"Handled day-to-day accounts for exhibitions and promotions including Tally entries and TDS calculations.",accent:"#FFE500",
+    features:["Booking purchase entries in Tally; vendor payments & vouchers","Bank Reconciliation and Creditors & Debtors Ledger Reconciliation","TDS Calculation, Debit & Credit Notes preparation","Prepaid expenses, provisions and adjusting entries in Tally"],
+    links:[{label:"View Experience",url:"#"}],
   },
-  { id:"04",title:"AI Agent (POC)",tech:["React.js","Socket.io","AI"],desc:"Real-time AI assistant interface with digital-human conversational UI and multi-channel broadcast architecture.",accent:"#C77DFF",
-    features:["Real-time AI assistant with digital-human conversational UI","Multi-channel broadcast architecture","Socket.io-powered real-time communication","Interactive chatbot interface with natural language processing"],
-    links:[{label:"View Project",url:"#"}],
+  { id:"04",title:"Shiv Shakti Furnishings",tech:["Logix","MS Excel","Ledger Rec.","Sales Bills"],desc:"Managed sales bills, purchase entries, and ledger reconciliation using Logix software and Excel.",accent:"#C77DFF",
+    features:["Preparation of Sales Bills and Purchase Entries in Logix software","Sundry Creditors & Debtors Ledger Reconciliation","Preparing price lists and quotations in Excel","Day-to-day accounting and record keeping"],
+    links:[{label:"View Experience",url:"#"}],
+  },
+  { id:"05",title:"JSTPL",tech:["Tally ERP9","Bank Entries","Ledger Rec.","Purchase"],desc:"Handled sales bills, delivery notes, bank payments and receipts, and purchase entries in Tally.",accent:"#FF4D8D",
+    features:["Preparation of Sales Bills & Delivery Notes in Tally","Maintaining Bank Entry Payments & Receipts","Posting Purchase Entries and ledger reconciliation","Sundry Creditors & Debtors Ledger Reconciliation"],
+    links:[{label:"View Experience",url:"#"}],
   },
 ];
 
@@ -35,10 +39,10 @@ export default function Work() {
     <section id="work" ref={ref} style={{ padding:secPad }}>
       <div style={{ maxWidth:1200,margin:"0 auto" }}>
         <div style={{ marginBottom: isMobile ? 44 : 72 }}>
-          <p style={{ fontFamily:"'Space Mono',monospace",fontSize:10,color:"#00FFB2",letterSpacing:"0.18em",textTransform:"uppercase",marginBottom:18,opacity:inView?1:0,transition:"opacity 0.6s ease" }}>03 — Work</p>
+          <p style={{ fontFamily:"'Space Mono',monospace",fontSize:10,color:"#00FFB2",letterSpacing:"0.18em",textTransform:"uppercase",marginBottom:18,opacity:inView?1:0,transition:"opacity 0.6s ease" }}>03 — Experience</p>
           <h2 style={{ margin:0 }}>
-            <div style={{ overflow:"hidden",display:"block" }}><SplitText text="Selected" inView={inView} delay={0.1} style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:"clamp(46px,7vw,90px)",color:"#fff",letterSpacing:"0.02em",lineHeight:0.9 }}/></div>
-            <div style={{ overflow:"hidden",display:"block" }}><SplitText text="Projects." inView={inView} delay={0.32} style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:"clamp(46px,7vw,90px)",WebkitTextStroke:"1.5px rgba(255,229,0,0.55)",color:"transparent",letterSpacing:"0.02em",lineHeight:0.9 }}/></div>
+            <div style={{ overflow:"hidden",display:"block" }}><SplitText text="Career" inView={inView} delay={0.1} style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:"clamp(46px,7vw,90px)",color:"#fff",letterSpacing:"0.02em",lineHeight:0.9 }}/></div>
+            <div style={{ overflow:"hidden",display:"block" }}><SplitText text="Journey." inView={inView} delay={0.32} style={{ fontFamily:"'Bebas Neue',Impact,sans-serif",fontSize:"clamp(46px,7vw,90px)",WebkitTextStroke:"1.5px rgba(255,229,0,0.55)",color:"transparent",letterSpacing:"0.02em",lineHeight:0.9 }}/></div>
           </h2>
         </div>
         <div style={{ display:"flex",flexDirection:"column",gap:3 }}>

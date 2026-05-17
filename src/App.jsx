@@ -12,7 +12,6 @@ import About from "./components/About.jsx";
 import Skills from "./components/Skills.jsx";
 import Work from "./components/Work.jsx";
 import Contact from "./components/Contact.jsx";
-import Chatbot from "./components/Chatbot.jsx";
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
@@ -33,9 +32,6 @@ export default function App() {
         @keyframes flicker{0%,100%{opacity:1;}91%{opacity:1;}92%{opacity:0.55;}95%{opacity:1;}98%{opacity:0.75;}99%{opacity:1;}}
         @keyframes expandLine{0%{width:0;opacity:0;}50%{width:48px;opacity:1;}100%{width:48px;opacity:0;}}
         @keyframes shineSweep{0%{left:-50px;}100%{left:110%;}}
-        @keyframes dotPulse{0%,100%{opacity:0.2;transform:scale(0.8);}50%{opacity:1;transform:scale(1);}}
-        @keyframes msgSlideIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
-        @keyframes rippleOut{0%{opacity:0.7;transform:scale(1);}100%{opacity:0;transform:scale(1.8);}}
         @keyframes modalFadeIn{from{opacity:0;}to{opacity:1;}}
         @keyframes modalSlideUp{from{opacity:0;transform:translateY(40px) scale(0.97);}to{opacity:1;transform:translateY(0) scale(1);}}
 
@@ -65,7 +61,6 @@ export default function App() {
         <Contact/>
       </main>
 
-      <Chatbot/>
     </>
   );
 }
